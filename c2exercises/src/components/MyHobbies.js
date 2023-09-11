@@ -1,4 +1,4 @@
-//? Da kreirame funkcionalna komponenta kade vo nekoi html elementi kje gi stavite vasite 3 hobia
+//? Da kreirame funkcionalna komponenta kade vo nekoi html elementi kje gi stavite vasite 3 hobija
 
 import React from "react";
 

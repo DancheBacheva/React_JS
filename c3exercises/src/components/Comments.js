@@ -8,7 +8,7 @@ export function Comments(props) {
       <table>
         <thead>
           <tr>
-            <th>ID</th>
+            <th>USERID</th>
             <th>AUTHOR</th>
             <th>TEXT</th>
             <th>LIKES</th>
@@ -17,7 +17,7 @@ export function Comments(props) {
         <tbody>
           {props.comments.map((comment) => (
             <tr>
-              <td>{comment.id}</td>
+              <td>{comment.userIid}</td>
               <td>{comment.author}</td>
               <td>{comment.text}</td>
               <td>

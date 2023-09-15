@@ -2,7 +2,7 @@ import React from "react";
 
 export class CommentsClass extends React.Component{
   render() {
-    function onLikeClick(){
+    function clickLike(){
       console.log("+1");
     }  
     return (
@@ -17,13 +17,13 @@ export class CommentsClass extends React.Component{
           </tr>
         </thead>
         <tbody>
-          {this.props.comments.map((comment) => (
-            <tr>
+          {this.props.comments.map((comment, i) => (
+            <tr key={i}>
               <td>{comment.userId}</td>
               <td>{comment.author}</td>
               <td>{comment.text}</td>
               <td>
-                <button onClick={onLikeClick}>LIKE</button>
+                <button onClick={clickLike}>LIKE</button>
               </td>
             </tr>
           ))}

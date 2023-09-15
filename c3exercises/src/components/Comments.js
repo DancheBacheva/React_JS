@@ -1,6 +1,7 @@
 //Da napravime komponenta vo koja kje prikazuvame komentari, neka sekoj komentar ima id, author i text. Neka listata so komentari ja imate vo app.js i ja pratite preku props vo kreiranata komponenta i tamu da gi prikazeme informaciite
 //neka bidat vo nekoja tabela
 //pokraj ova imate nekoe kopce LIKE sto vo konzola kje pecati +1
+import PropTypes from "prop-types";
 
 export function Comments(props) {
   return (
@@ -15,9 +16,9 @@ export function Comments(props) {
           </tr>
         </thead>
         <tbody>
-          {props.comments.map((comment) => (
-            <tr>
-              <td>{comment.userIid}</td>
+          {props.comments.map((comment, i) => (
+            <tr key={i}>
+              <td>{comment.userId}</td>
               <td>{comment.author}</td>
               <td>{comment.text}</td>
               <td>
@@ -29,4 +30,12 @@ export function Comments(props) {
       </table>
     </div>
   );
+}
+
+Comments.propTypes = {
+ comments: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+Comments.defaultProps = {
+  comment: {userId: "No user ID", author: "No author", text: "No comment"},
 }

@@ -2,6 +2,7 @@
 //neka bidat vo nekoja tabela
 //pokraj ova imate nekoe kopce LIKE sto vo konzola kje pecati +1
 import PropTypes from "prop-types";
+import { clickLike } from "./CommentsClass"
 
 export function Comments(props) {
   return (
@@ -22,7 +23,7 @@ export function Comments(props) {
               <td>{comment.author}</td>
               <td>{comment.text}</td>
               <td>
-                <button>LIKE</button>
+                <button onClick={clickLike}>LIKE</button>
               </td>
             </tr>
           ))}
@@ -37,5 +38,5 @@ Comments.propTypes = {
 };
 
 Comments.defaultProps = {
-  comment: {userId: "No user ID", author: "No author", text: "No comment"},
+  comment: [{userId: "No ID", author: "No author", text: "No comment"}],
 }

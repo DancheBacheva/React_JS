@@ -13,7 +13,9 @@ function App() {
   return (
     <div className="App">
       <Comments comments={comments}/>
+      <br/>
       <CommentsClass comments={comments}/>
+
     </div>
   );
 }

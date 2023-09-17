@@ -1,10 +1,12 @@
 import React from "react";
 
+export function clickLike(){
+  console.log("+1");
+}
+
 export class CommentsClass extends React.Component{
   render() {
-    function clickLike(){
-      console.log("+1");
-    }  
+      
     return (
       <div>
       <table>
@@ -33,3 +35,4 @@ export class CommentsClass extends React.Component{
     )
   }
 }
+

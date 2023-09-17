@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <h3>Students 2023</h3>
       <Student students={students}/>
-      <Semester shouldShowSemester={1} />
+      <Semester shouldShowSemester={true} />
     </div>
   );
 }

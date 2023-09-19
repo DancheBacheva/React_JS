@@ -14,8 +14,12 @@ import { Student } from './components/Student';
 function App() {
   let students = [
     {name: "Janine", surname: "Jorie", index: 25356},
-    {name: "Cécile", surname: "Garance", index: 25357},{name: "Danielle", surname: "Benoit", index: 25358},{name: "William", surname: "Olly", index: 25359},{name: "Frank", surname: "Astor", index: 25360},
+    {name: "Cécile", surname: "Garance", index: 25357},
+    {name: "Danielle", surname: "Benoit", index: 25358},
+    {name: "William", surname: "Olly", index: 25359},
+    {name: "Frank", surname: "Astor", index: 25360},
   ]
+  
   return (
     <div className="App">
       <h3>Students 2023</h3>

@@ -32,3 +32,7 @@ export const Student = ({ students }) => {
 Student.propTypes = {
   students: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
+Student.defaultProps = {
+  student: [{name: "No name", surname: "No surname", index: "NN"}],
+}

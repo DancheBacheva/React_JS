@@ -10,6 +10,7 @@
 import './App.css';
 import { Semester } from './components/Semester';
 import { Student } from './components/Student';
+import { Counter } from "./components/Counter";
 
 function App() {
   let students = [
@@ -25,6 +26,7 @@ function App() {
       <h3>Students 2023</h3>
       <Student students={students}/>
       <Semester shouldShowSemester={true} />
+      <Counter />
     </div>
   );
 }

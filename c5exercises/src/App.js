@@ -5,10 +5,10 @@
 //?Pod sekoj avtomobil da ima tri kopcinja ednoto like, drugoto dislike (-1 glass) i superLike (+2 glasa) i preku useEffect da se naprai da vo konzola se pecatat glasovite od site avtomobili no samo koga se glasa za 1 i 3 tiot avtomobil
 
 import './App.css';
-import { useState, useEffect } from "react";
 import { Car } from './components/Car';
 
 function App() {
+
   return (
     <div className="App">
       <h1>Vote for car of the year</h1>

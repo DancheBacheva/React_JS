@@ -8,29 +8,23 @@ export const Car = () => {
   const [car4likes, setcar4likes] = useState(0);
 
   useEffect(() => {
-    if (car1likes === 4) {
+    if (car1likes === 4)
       console.log("This is the car of the year!!!");
-    } else {
-       console.log(`Car 1: ${car1likes}`);
-    }
 
-    if (car2likes === 4) {
+    if (car2likes === 4) 
       console.log("This is the car of the year!!!");
-    } else {
+
+    if (car3likes === 4)
+      console.log("This is the car of the year!!!");
+
+    if (car4likes === 4)
+      console.log("This is the car of the year!!!");
+
+      console.log(`Car 1: ${car1likes}`);
       console.log(`Car 2: ${car2likes}`);
-    }
-
-    if (car3likes === 4) {
-      console.log("This is the car of the year!!!");
-    } else {
       console.log(`Car 3: ${car3likes}`);
-    }
-
-    if (car4likes === 4) {
-      console.log("This is the car of the year!!!");
-    } else {
       console.log(`Car 4: ${car4likes}`);
-    } 
+  
   }, [car1likes, car3likes]);
 
   return(

@@ -1,5 +1,26 @@
 .App {
   text-align: center;
+  background: linear-gradient(76.8deg, rgb(121, 45, 129) 3.6%, rgb(36, 31, 98) 90.4%); 
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color:burlywood;
+}
+
+img{
+  border-radius: 30px;
+  border: 3px solid burlywood;
+  margin: 10px;
+  
+}
+
+input, button{
+  border-radius: 30px;
+  border: 3px solid burlywood;
+  color: #282c34;
+  margin-top: 20px;
+}
+
+a{
+  color: burlywood
 }
 
 .App-logo {

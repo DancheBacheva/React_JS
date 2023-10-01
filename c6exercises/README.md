@@ -1,3 +1,5 @@
+![Cars for sale](https://github.com/DancheBacheva/React_JS/assets/128419533/c681443c-a63e-4cf4-a854-38364ba52811)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

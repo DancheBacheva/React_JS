@@ -14,16 +14,13 @@ function App() {
   const [ownedCars, setOwnedCars] = useState([]);
 
   const addCar = () => {
-     const carExists = carsForSale.find((existingCar) => existingCar.car === newCar);
+    const carExists = carsForSale.find((existingCar) => existingCar.car === newCar);
   
     if (carExists) {
-      const updatedCars = [...carsForSale];
-      const carIndex = updatedCars.findIndex((existingCar) => existingCar.car === newCar);
-      
-      if (carIndex >= 0) {
-        updatedCars[carIndex].quantity += 1;
-        setCarsForSale(updatedCars);
-      }
+      const updatedCars = carsForSale.map((existingCar) =>
+        existingCar.car === newCar ? { ...existingCar, quantity: existingCar.quantity + 1 } : existingCar
+      );
+      setCarsForSale(updatedCars);
     } else {
       const newCarEntered = {
         id: carsForSale.length + 1,
@@ -33,20 +30,69 @@ function App() {
       };
       setCarsForSale([...carsForSale, newCarEntered]);
       setNewCar("");
-      }
+    }
   };
 
+  const buyCar = (vehicle) => {
+    const updatedCarsForSale = carsForSale.map((carForSale) =>
+      carForSale.id === vehicle.id
+        ? { ...carForSale, quantity: carForSale.quantity - 1 }
+        : carForSale
+    );
+  
+    const carToBeRemoved = updatedCarsForSale.find(
+      (carForSale) => carForSale.id === vehicle.id && carForSale.quantity === 0
+    );
+  
+    if (carToBeRemoved) {
+      const filteredCarsForSale = updatedCarsForSale.filter((carForSale) => carForSale.id !== carToBeRemoved.id
+      );
+      setCarsForSale(filteredCarsForSale);
+    } else {
+      setCarsForSale(updatedCarsForSale);
+    };
+  
+    const ownedVehicle = ownedCars.find((ownedCar) => ownedCar.id === vehicle.id);
+  
+    if (ownedVehicle) {
+      ownedVehicle.quantity += 1;
+    } else {
+      setOwnedCars([
+        ...ownedCars,
+        { id: vehicle.id, car: vehicle.car, quantity: 1 },
+      ]);
+    }
+  };
+  
+  const sellCar = (vehicle) => {
+    const updatedOwnedCars = ownedCars.map((ownedCar) =>
+    ownedCar.id === vehicle.id
+      ? { ...ownedCar, quantity: ownedCar.quantity - 1 }
+      : ownedCars
+  );
 
-  const buyCar = (car) => {
-    const updatedCarsForSale = carsForSale.filter((item) => item.id !== car.id);
-    const updatedOwnedCars = [...ownedCars, car];
+    const carToBeRemoved = updatedOwnedCars.find(
+    (ownedCar) => ownedCar.id === vehicle.id && ownedCar.quantity === 0
+  );
 
-    setCarsForSale(updatedCarsForSale);
-    setOwnedCars(updatedOwnedCars);
-  };  
+    if (carToBeRemoved) {
+      const filteredOwnedCars = updatedOwnedCars.filter((ownedCar) => ownedCar.id !== carToBeRemoved.id
+      );
+      setOwnedCars(filteredOwnedCars);
+    } else {
+      setOwnedCars(updatedOwnedCars);
+    };
 
-  const sellCar = (ownedCar) => {
-
+    const updatedVehicleForSale = carsForSale.find((carForSale) => carForSale.id === vehicle.id);
+  
+    if (updatedVehicleForSale) {
+      updatedVehicleForSale.quantity += 1;
+    } else {
+      setCarsForSale([
+        ...carsForSale,
+        { id: vehicle.id, car: vehicle.car, quantity: 1 },
+      ]);
+    }
   }
 
   return (

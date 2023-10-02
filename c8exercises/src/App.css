@@ -1,0 +1,72 @@
+body{
+  background: radial-gradient(circle at 6.6% 12%, rgb(64, 0, 126) 20.8%, rgb(0, 255, 160) 100.2%);
+  color: rgb(0, 255, 160);
+  font-family: Arial, Helvetica, sans-serif;
+  height: 900px;
+}
+.App {
+  text-align: center;
+}
+
+.error404{
+  font-size: 200px;
+  color: red;
+}
+
+.link{
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
+
+.link:hover{
+  color: rgb(0, 255, 160);
+  text-decoration: none;
+  font-size: x-large;
+}
+
+.navImg{
+  width: 50px;
+  height: 50px;
+}
+
+.navImg:hover{
+  width: 80px;
+  height: 80px;
+}
+
+.movieImg{
+  width: 250px;
+  height: 400px;
+  box-shadow: 3px 3px 3px aqua;
+}
+
+.homeImg{
+  width: 500px;
+  height: 300px;
+  box-shadow: 5px 5px 5px aqua;
+}
+
+.newMovieInput{
+  height: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  border: 3px solid aqua;
+}
+
+.submit{
+  width: 100px;
+  height: 20px;
+  border-radius: 5px;
+  border: 3px solid aqua;
+}
+
+.submit:hover{
+  width: 110px;
+  height: 30px;
+  background-color: black;
+  color: aqua;
+}

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 export const Movies = ( {movies} ) => {
-  
   return(
     <div>
       <h1>Movies</h1>

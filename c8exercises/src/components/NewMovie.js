@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 
 export const NewMovie = () => {
 const initialValues = { title: "", genre: "", rating: "" }
 const [formValues, setFormValues] = useState(initialValues);
+
+const [searchParams, setSearchParams] = useSearchParams({title: "", genre: ""});
+  const title = searchParams.get("title")
+  const genre = searchParams.get("genre")
 
 const handleChange = (e) => {
   const { name, value } = e.target;
@@ -38,6 +43,16 @@ const handleSubmit = (e) =>{
         onClick={handleSubmit}
         >Submit</button>
       </form>
+
+      <hr/>
+      <Link
+        className='link'
+        to={`/movies/new?title=${title}&genre=${genre}`}
+      >New movie</Link>
+      <div>
+        <h3>{title}</h3>
+        <h4>{genre}</h4>
+      </div>
     </div>
   )
 }

@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Pagination = ( {totalCharacters,
 charactersPerPage,
 setCurrentPage,
@@ -30,6 +28,3 @@ currentPage} ) => {
     </div>
   )
 }
-
-
-

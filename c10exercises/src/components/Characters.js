@@ -24,14 +24,13 @@ export const Characters = ({
           >{character.location.name}</Link></h3>
           {
           locationDetails && (
-            <Link className="link" to={character.location.name}>
+            <Link className="link">
             <div>
               {location.map((place, i) => {
                 if (place.name === character.location.name) {
                   return (
                     <div key={i}>
-                      <h5>Type: {place.type}</h5>
-                      <h5>Dimension: {place.dimension}</h5>
+                      <Link to={`/location/${place.id}`}>More information</Link>
                       <hr />
                     </div>
                   );
@@ -44,17 +43,20 @@ export const Characters = ({
 
           <h3><Link className="link"
           onClick={() => setShowEpisodes(!showEpisodes)}>
-          Episodes</Link></h3>
+          Episodes</Link></h3>  
           {showEpisodes && (
           <ul>
-          {episode.map((ep, i) => (
+            {character.episode.map((ep, i) => {
+            return(
             <div key={i}>
-              <li className="episodes" >{ep.episode}: {ep.name}</li>
-              <h6>Air date: {ep.air_date}</h6>
+              <Link to={ep}>
+                <li className="episodes">{ep}</li>
+              </Link>
             </div>
-          ))}
+            )
+          })}
         </ul>
-        )}
+        )}       
           </div>
         ))
       }

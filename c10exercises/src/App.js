@@ -3,13 +3,15 @@ import { Link, Route, Routes } from "react-router-dom";
 import { Characters } from './components/Characters';
 import {useEffect, useState} from "react";
 import { Pagination } from './components/Pagination';
-import axios from 'axios';
 import { API_URL } from "./utils/constants";
+import { LocationInfo } from './components/LocationInfo';
+import { EpisodeDetails } from './components/EpisodeDetails';
+
 
 function App() {
   const [characterData, setCharacterData] = useState([]);
   const [location, setLocation] = useState([]);
-  const [episode, setEpisode] =useState([]);
+  const [episode, setEpisode] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [charactersPerPage, setCharactersPerPage] = useState(3);
 
@@ -36,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>RICK AND MORTY <Link className="link" to="/character">CHARACTERS</Link></h1>
+      <h1>RICK AND MORTY <Link className="link" to="/character">CHARACTERS</Link></h1>   
   
       <Routes>
         <Route path="/character" element={<Characters
@@ -44,6 +46,12 @@ function App() {
          location={location}
          episode={episode}
         />} />
+        <Route path="/location/:id" element={<LocationInfo
+        location={location}
+        />}/>
+        <Route path="/episode/:id" element={<EpisodeDetails
+        episode={episode}
+        />}/>
 
       </Routes>
     
